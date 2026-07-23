@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% block title %}
+Generate Secure QR | QR Secure
+{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+
+    <div class="badge">
+        🔐 Secure File Access
+    </div>
+
+    <h1>
+        Generate a Secure QR Code
+    </h1>
+
+    <p>
+        Upload a file or provide a file link.
+        Protect access using QR-based Gmail verification.
+    </p>
+
+</section>
+
+
+<div class="card">
+
+    <form
+        method="POST"
+        enctype="multipart/form-data"
+    >
+
+        <!-- Upload File -->
+
+        <div class="form-group">
+
+            <label for="file">
+                📤 Upload a File
+            </label>
+
+            <input
+                type="file"
+                id="file"
+                name="file"
+                class="form-input"
+            >
+
+        </div>
+
+
+        <div class="divider">
+
+            <span>OR</span>
+
+        </div>
+
+
+        <!-- File Link -->
+
+        <div class="form-group">
+
+            <label for="file_link">
+                🔗 Use a File Link
+            </label>
+
+            <input
+                type="url"
+                id="file_link"
+                name="file_link"
+                class="form-input"
+                placeholder="https://example.com/your-file"
+            >
+
+        </div>
+
+
+        <button
+            type="submit"
+            class="btn"
+        >
+            Generate Secure QR Code
+        </button>
+
+    </form>
+
+
+    <div class="security-info">
+
+        🔒 <strong>Secure Access Protection</strong>
+
+        <br><br>
+
+        Choose either an uploaded file or an external
+        file link. Users must complete Gmail verification
+        and receive owner approval before accessing the file.
+
+    </div>
+
+</div>
+
+{% endblock %}

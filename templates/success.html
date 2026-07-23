@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}
+Request Submitted | QR Secure
+{% endblock %}
+
+{% block content %}
+
+<div class="status-card card">
+
+    <div class="status-icon">
+        ✓
+    </div>
+
+    <h1>
+        Request Submitted
+    </h1>
+
+    <p>
+        Your file access request has been successfully
+        sent to the owner for review.
+    </p>
+
+    <div class="security-info">
+
+        📧 <strong>What's next?</strong>
+
+        <br><br>
+
+        The file owner will review your request and
+        approve or deny access.
+
+        <br><br>
+
+        You will receive an email notification after
+        your request has been reviewed.
+
+    </div>
+
+    <div class="security-info">
+
+        🔐 Once approved, scan the QR code again
+        using the same Gmail address to access the file.
+
+    </div>
+
+</div>
+
+{% endblock %}

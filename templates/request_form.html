@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block title %}
+Request Secure Access | QR Secure
+{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+
+    <div class="badge">
+        🛡️ Protected File
+    </div>
+
+    <h1>
+        Request File Access
+    </h1>
+
+    <p>
+        This file is protected by QR Secure.
+        Verify your Gmail address to request access
+        from the file owner.
+    </p>
+
+</section>
+
+
+<div class="card">
+
+    <div class="status-icon">
+        🔐
+    </div>
+
+
+    <form method="POST">
+
+        <div class="form-group">
+
+            <label for="gmail">
+                Enter Your Gmail Address
+            </label>
+
+            <input
+                type="email"
+                id="gmail"
+                name="gmail"
+                class="form-input"
+                placeholder="yourname@gmail.com"
+                autocomplete="email"
+                required
+            >
+
+        </div>
+
+
+        <button
+            type="submit"
+            class="btn"
+        >
+            Request Secure Access
+        </button>
+
+    </form>
+
+
+    <div class="security-info">
+
+        🔒 <strong>How does this work?</strong>
+
+        <br><br>
+
+        1️⃣ Enter your Gmail address.
+
+        <br>
+
+        2️⃣ The file owner receives your access request.
+
+        <br>
+
+        3️⃣ The owner approves or denies your request.
+
+        <br>
+
+        4️⃣ Once approved, scan the QR code again
+        to access the file.
+
+    </div>
+
+</div>
+
+{% endblock %}

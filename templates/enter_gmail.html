@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block title %}
+Verify Gmail | QR Secure
+{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+
+    <div class="badge">
+        🔐 Identity Verification
+    </div>
+
+    <h1>
+        Verify Your Gmail
+    </h1>
+
+    <p>
+        Enter your Gmail address to request secure access
+        to the protected file.
+    </p>
+
+</section>
+
+
+<div class="card">
+
+    <form method="POST">
+
+        <div class="form-group">
+
+            <label for="gmail">
+                Gmail Address
+            </label>
+
+            <input
+                type="email"
+                id="gmail"
+                name="gmail"
+                class="form-input"
+                placeholder="yourname@gmail.com"
+                required
+            >
+
+        </div>
+
+
+        <button
+            type="submit"
+            class="btn"
+        >
+            Request Secure Access
+        </button>
+
+    </form>
+
+
+    <div class="security-info">
+
+        🛡️ <strong>Secure Verification</strong>
+
+        <br><br>
+
+        Your Gmail address will be sent to the file owner
+        for approval. Once approved, scan the QR code again
+        to access the protected file.
+
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        {% block title %}
+        QR Secure
+        {% endblock %}
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+
+            <a href="{{ url_for('generate_qr') }}" class="logo">
+                <span class="logo-icon">⌁</span>
+                QR<span>SECURE</span>
+            </a>
+
+            <div class="nav-status">
+                <span class="status-dot"></span>
+                System Secure
+            </div>
+
+        </div>
+    </nav>
+
+
+    <main class="main-content">
+
+        {% block content %}
+        {% endblock %}
+
+    </main>
+
+
+    <footer class="footer">
+
+        <p>
+            © 2026 QR Secure · Secure File Access System
+        </p>
+
+        <div class="footer-security">
+            🔒 Protected Access
+        </div>
+
+    </footer>
+
+</body>
+</html>
