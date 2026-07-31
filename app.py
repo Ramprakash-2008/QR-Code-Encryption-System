@@ -461,8 +461,7 @@ def process_request(
             </p>
 
             <p>
-            Scan the QR code again to
-            access the file.
+            please reload the requestion page to download
             </p>
             """
         )
