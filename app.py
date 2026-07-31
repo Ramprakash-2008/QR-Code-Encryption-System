@@ -348,18 +348,6 @@ def handle_qr_or_request(token):
         print("STEP 4: Deny URL created")
 
         print("STEP 5: About to send email")
-
-        send_email(
-            Config.OWNER_EMAIL,
-            "File Access Request",
-            email_body
-        )
-
-        print("STEP 6: Email sent")
-
-        return render_template("success.html")
-
-        # Email body
         email_body = f"""
         <h3>New File Access Request</h3>
 
@@ -380,6 +368,18 @@ def handle_qr_or_request(token):
         </a>
         </p>
         """
+        send_email(
+            Config.OWNER_EMAIL,
+            "File Access Request",
+            email_body
+        )
+
+        print("STEP 6: Email sent")
+
+        return render_template("success.html")
+
+        # Email body
+        
 
 
         # Send approval email
