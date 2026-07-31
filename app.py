@@ -326,29 +326,38 @@ def handle_qr_or_request(token):
         # NEW ACCESS REQUEST
         # =================================
 
-        update_request_to_pending(
-            token,
-            gmail
-        )
+        print("STEP 1: POST request received")
 
+        update_request_to_pending(token, gmail)
+        print("STEP 2: Database updated")
 
-        # Approval URL
         approve_url = url_for(
             "process_request",
             action="approve",
             token=token,
             _external=True
-        )
+            )
+        print("STEP 3: Approve URL created")
 
-
-        # Denial URL
         deny_url = url_for(
-            "process_request",
-            action="deny",
-            token=token,
-            _external=True
+        "process_request",
+        action="deny",
+        token=token,
+        _external=True
+        )
+        print("STEP 4: Deny URL created")
+
+        print("STEP 5: About to send email")
+
+        send_email(
+            Config.OWNER_EMAIL,
+            "File Access Request",
+            email_body
         )
 
+        print("STEP 6: Email sent")
+
+        return render_template("success.html")
 
         # Email body
         email_body = f"""
