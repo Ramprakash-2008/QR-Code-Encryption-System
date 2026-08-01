@@ -171,10 +171,9 @@ def generate_qr():
             # ====================================
 
             qr_url = (
-                f"{Config.BASE_URL}"
+                f"{Config.BASE_URL.rstrip('/')}"
                 f"/request/{token}"
             )
-
 
             # ====================================
             # CREATE QR DIRECTORY
