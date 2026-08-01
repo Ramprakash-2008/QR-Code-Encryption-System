@@ -537,7 +537,17 @@ def debug_requests():
 # ========================================
 # RUN APPLICATION
 # ========================================
+@app.errorhandler(Exception)
+def handle_exception(e):
+    import traceback
 
+    print("========== FLASK ERROR ==========")
+    print("ERROR TYPE:", type(e).__name__)
+    print("ERROR:", str(e))
+    traceback.print_exc()
+    print("=================================")
+
+    return "Internal Server Error", 500
 if __name__ == "__main__":
 
     app.run(
