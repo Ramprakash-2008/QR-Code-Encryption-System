@@ -14,5 +14,5 @@ class Config:
 
     BASE_URL = os.getenv(
         "BASE_URL",
-        "https://qr-code-encryption-system.onrender.com"
+        "https://qr-code-encryption-system-1.onrender.com"
     )
