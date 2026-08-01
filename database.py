@@ -26,6 +26,9 @@ def init_db():
 def create_request(token, file_link=None, file_path=None):
     """Create a new file access request."""
 
+    print("DATABASE PATH:", Config.DB_PATH)
+    print("CREATING REQUEST:", token)
+
     with get_connection() as conn:
         conn.execute(
             """
@@ -40,6 +43,8 @@ def create_request(token, file_link=None, file_path=None):
                 "new"
             )
         )
+
+        print("REQUEST INSERTED:", token)
 
 
 def get_request_by_token(token):
