@@ -280,7 +280,7 @@ def handle_qr_or_request(token):
     # ====================================
 
     if request.method == "POST":
-
+        print("========== REQUEST POST START ==========")
         gmail = request.form.get(
             "gmail"
         )
@@ -388,7 +388,7 @@ def handle_qr_or_request(token):
             email_body
         )
 
-
+        print("========== REQUEST POST SUCCESS ==========")
         return render_template(
             "success.html"
         )
